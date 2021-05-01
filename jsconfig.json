@@ -1,8 +1,11 @@
 {
     "compilerOptions": {
-        "checkJs": true
+        "checkJs": true,
+        "target": "es2015",
+        "noEmit": true,
     },
     "typeAcquisition": {
+        "enable": true,
         "include": ["d3"]
     }
 }

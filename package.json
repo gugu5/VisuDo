@@ -1,0 +1,23 @@
+{
+  "name": "visu-do",
+  "version": "1.0.0",
+  "description": "Projet du Cours de Visualisation de Donnees",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gugu5/VisuDo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gugu5/VisuDo/issues"
+  },
+  "homepage": "https://github.com/gugu5/VisuDo#readme",
+  "devDependencies": {
+    "@types/d3": "^6.3.0"
+  }
+}
