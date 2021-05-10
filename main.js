@@ -22,6 +22,7 @@ d3.dsv(';', './FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
         //debugger;
         data.forEach(d => {
             if (d[field] === null) {
+                // @ts-ignore
                 d[field] = mean;
             }
         });
