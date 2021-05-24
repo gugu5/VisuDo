@@ -9,8 +9,27 @@
     <!-- disable favicon requests-->
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
     <script src="https://d3js.org/d3.v6.min.js"></script>
-	<script src="main.js"></script>
+    <script src="graphConfig.js"></script>
+	<script src="graph_PfPI_age.js"></script>
+    <script src="main.js"></script>
 </head>
 <body>
+
+    <div class="fiveDimensions">
+        <h2 class='title'>Dimensions principales de la personnalité selon l'âge</h2>
+        
+        
+        <div>
+            <label for='personnalityDimension'>Personnality Dimension</label>
+            <select id='personnalityDimension'>
+                <option value='Ouverture' selected>Ouverture</option>
+                <option value='Caractère Consciencieux'>Caractère Consciencieux</option>
+                <option value='Extraversion'>Extraversion</option>
+                <option value='Agréabilité'>Agréabilité</option>
+                <option value='Stabilité Emotionnelle' >Stabilité Emotionnelle</option>
+            </select>
+        </div>
+    </div>
+
 </body>
 </html>

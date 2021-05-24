@@ -3,6 +3,7 @@
 
 
 
+let globalData = null
 
 d3.dsv(';', './FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
     //afficher console
@@ -27,18 +28,19 @@ d3.dsv(';', './FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
             }
         });
     })
+    globalData = data;
     
-    console.log(data.columns)
+    console.log(data.columns);
     console.log(data);
 
-    // on a des données sans trouss
+    // on a des données sans donnees manquantes
+
+
+    //callbacks
+    graphPfPI();
 
 
 
-
-    const div = d3.select('body').append('div');
-    div.html('<div style="background-color: red;">test</div>');
-    div.style("border", "3px solid blue")
     
 })
 
