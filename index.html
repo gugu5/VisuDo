@@ -5,10 +5,10 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Personnalite et sport</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <!-- disable favicon requests-->
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
-    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!--<script src="https://d3js.org/d3.v6.min.js"></script>-->
+    <script src="d3.v6.min.js"></script>
     <script src="graphConfig.js"></script>
 	<script src="graph_PfPI_age.js"></script>
     <script src="camembert.js"></script>
@@ -18,7 +18,7 @@
 </head>
 <body>
 
-    <div id="graph1">
+    <div id="graph1" class="graphcontainer">
         <h2 class='title'>Dimensions principales de la personnalité selon l'âge</h2>
         
         
@@ -36,7 +36,7 @@
     </div>
 
 
-    <div id="graph2">
+    <div id="graph2" class="graphcontainer">
         <h2 class='title'>Dimensions principales de la personnalité selon le niveau</h2>
         
         
@@ -54,7 +54,7 @@
     </div>
 
 
-    <div id="graph3">
+    <div id="graph3" class="graphcontainer">
         <h2 class='title'>Nombre d'occurrences de tendances dysfonctionnelles selon le niveau</h2>
         
         
@@ -71,7 +71,7 @@
     </div>
 
 
-    <div id="graph4">
+    <div id="graph4" class="graphcontainer">
         <h2 class='title'>Proportion des tendances dysfonctionnelles selon le niveau</h2>
         
         
@@ -87,55 +87,5 @@
         </div>
     </div>
 
-    <div class='foreignLanguagesTotal'>
-        <table class="languagesForeign_legend">
-            <tr>
-                <th>Color</th>
-                <th>Languages</th>
-            </tr>
-            <tr>
-                <th class="languagesForeign_legend_color_182f58"></th>
-                <th>English</th>
-            </tr>
-            <tr>
-                <th class="languagesForeign_legend_color_543b74"></th>
-                <th>French</th>
-            </tr>
-            <tr>
-                <th class="languagesForeign_legend_color_92407e"></th>
-                <th>German</th>
-            </tr>
-            <tr>
-                <th class="languagesForeign_legend_color_cc4975"></th>
-                <th>Italian</th>
-            </tr>
-            <tr>
-                <th class="languagesForeign_legend_color_f4635e"></th>
-                <th>Spanish</th>
-            </tr>
-            <tr>
-                <th class="languagesForeign_legend_color_ff8d3a"></th>
-                <th>Swiss-German</th>
-            </tr>
-            <tr>
-                <th class="languagesForeign_legend_color_ffc009"></th>
-                <th>Portugese</th>
-            </tr>
-            <tr>
-                <th class="languagesForeign_legend_color_6fb634"></th>
-                <th>Russian</th>
-            </tr>
-            <tr>
-                <th class="languagesForeign_legend_color_5abba4"></th>
-                <th>Japanese</th>
-            </tr>
-            <tr>
-                <th class="languagesForeign_legend_color_006d48"></th>
-                <th>Arabic</th>
-            </tr>
-            
-        </table>
-
-    </div>
 </body>
 </html>

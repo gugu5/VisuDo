@@ -66,7 +66,7 @@ d3.dsv(';', './FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
     const seuilTD = 60
     const tdScorePrefix = 'TD12 Note T '
 
-    graphCamembertGeneric('graph3', columnNiveauActuel, (currentSelection, categoryField) => {
+    graphCamembertGeneric('graph3', (currentSelection) => {
         const scoreColumns = d3.filter(globalData.columns, column => column.startsWith(tdScorePrefix));
         let filteredData = d3
         //conserver les données ayant le niveau sélectionné
@@ -97,9 +97,19 @@ d3.dsv(';', './FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
             '8+': 0,
         })
         return filteredData
+    }, {
+        '0': '0 TD',
+        '1': '1 TD',
+        '2': '2 TDs',
+        '3': '3 TDs',
+        '4': '4 TDs',
+        '5': '5 TDs',
+        '6': '6 TDs',
+        '7': '7 TDs',
+        '8+': '8 TDs ou plus',
     });
 
-    graphCamembertGeneric('graph4', columnNiveauActuel, (currentSelection, categoryField) => {
+    graphCamembertGeneric('graph4', (currentSelection) => {
         const scoreColumns = d3.filter(globalData.columns, column => column.startsWith(tdScorePrefix));
         // initialisation du résultat/compteur
         const res = {}

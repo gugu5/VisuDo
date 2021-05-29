@@ -1,7 +1,29 @@
 body {
     font-family:  'Source Sans Pro', sans-serif;
+    background-color: #797979;
+}
+.graphcontainer {
+    text-align: center;
+    margin-bottom: 100px;
+}
+.graphcontainer select {
+    margin-bottom: 15px;
+}
+.graphWithLegend {
+    position: relative;
+}
+.graphLegend {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 1em;
+}
+.graphLegend table {
+    text-align: left;
+    border-spacing: 5px;
 }
 
+/*
 #header {
     height: 400px;
     justify-content: center;
@@ -22,7 +44,7 @@ body {
 }
 
 #header .header-title {
-    /*background-color: rgba(255, 255, 255, 0.5);*/
+    /*background-color: rgba(255, 255, 255, 0.5);* /
     display: inline-block;
     padding: 10px;
     z-index: 50;
@@ -35,6 +57,7 @@ body {
     text-align: center;
     
 }
+*/
 
 .wrapper {
     margin: auto;
@@ -44,11 +67,6 @@ body {
 
 
 
-#header2{
-    font-size: 28px;
-    color: #f2b600;
-    text-align: center;
-}
 .title{
     color: #494d4c;
     font-size: 33px;
@@ -94,7 +112,7 @@ body {
 	border-bottom: 1px solid rgb(48,49,51);
 	border-right: 1px solid rgb(48,49,51);
 }
-
+/*
 .languagesAgeGraph {
     position: relative;
 }
@@ -118,7 +136,7 @@ body {
     background: green;
 }
 .languagesAgeGraph_color_blue{
-    background: #395b71;
+    background: hsl(204, 33%, 33%);
 }
 .languagesAgeGraph_color_green{
     background: #325b33;
@@ -126,7 +144,7 @@ body {
 }
 .languagesAgeGraph_color_sun{
     background: #f3b703;
-    
+    background: #2875da;
 }
 
 svg {
@@ -226,3 +244,4 @@ svg {
 svg {
     overflow: visible;
 }
+*/

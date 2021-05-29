@@ -1,91 +1,104 @@
 
-function graphCamembertGeneric(containerId, categoryField, extractData, getDomain = undefined) {
+function graphCamembertGeneric(containerId, extractData, legendMap = undefined) {
     let currentDimension; // set language by default, the same as used un html
 
     function drawGraph(){
-        d3.select(`#${containerId} .graph`).remove();
+        d3.select(`#${containerId} .graphWithLegend`).remove();
         
     
-        const filteredData = extractData(currentDimension, categoryField);
-        console.log(filteredData)
+        const preparedData = extractData(currentDimension);
+        // TODO filter 0 values ?
+        // total is necessary to compute the percentages
+        // @ts-ignore
+        const total = d3.sum(Object.values(preparedData))
+
+        console.log(preparedData)
         // Maintenant d3 contient une liste avec clé = âge et valeur = score moyen pour cet âge
 
         const svg = d3.select(`#${containerId}`)
+            .append('div')
+            .attr('class', 'graphWithLegend')
             .append('svg')
             .attr('width', graphConfig.width)
             .attr('height', graphConfig.height)
             .attr('class', 'graph')
-            .attr('style', 'font: 10px sans-serif'); 
-return;            
-        // Horizontal scale
-        const scaleX = d3.scaleBand()
-            .domain((getDomain === void 0) ? Array.from(filteredData.keys()) : getDomain(filteredData))
-            .range([0, graphConfig.width - graphConfig.margin.right - graphConfig.margin.left])
-            .padding(0.2)
-            .round(true) //arrondir les valeurs au pixel pres
-
-
-        // Vertical scale
-        const maxY = d3.max(filteredData, d => d[1])
-        const minY = d3.min(filteredData, d => d[1])
-        const extraOffset = graphConfig.axis.y.extraOffsetPercent * (maxY - minY) / 100
-        const scaleY = d3.scaleLinear()
-            .domain([maxY + extraOffset, minY - extraOffset])
-            .range([graphConfig.margin.top, graphConfig.height - graphConfig.margin.bottom -graphConfig.margin.top]);
-        
-        svg.append('g')
-            .attr('transform', `translate(${graphConfig.margin.left}, ${graphConfig.margin.top})`)
-            .call(d3.axisLeft(scaleY)
-            //.tickFormat((d,i) => d+'%')
-            );
-
-        svg.append('g')
-        .attr('transform', `translate(${graphConfig.margin.left}, ${graphConfig.margin.top})`)
-        .call(d3.axisLeft(scaleY)
-        //.tickFormat((d,i) => d+'%')
-        );
-        
-        // legend Y
-        svg
+            .attr('style', 'font: 10px sans-serif')
+            // on veut centrer le graphe
             .append('g')
-            .attr("transform",`translate(${graphConfig.labelY.offsetX},${(graphConfig.margin.top + graphConfig.height - graphConfig.margin.bottom) / 2}) rotate(-90)`)
-            .append('text')
-            .attr('class', 'label')
-            .text(`Score "${currentDimension}"`);
-            
-        svg.append('g')
-            .attr('transform', `translate(${graphConfig.margin.left}, ${graphConfig.height - graphConfig.margin.bottom})`)
-            .call(d3.axisBottom(scaleX));
+            .attr("transform", `translate(${graphConfig.width / 2},${graphConfig.height / 2})`)
+            ; 
 
-        
-        // legend X
+        const baseColors = ['#006d48',"#182f58","#543b74","#92407e", "#cc4975", "#f4635e", '#ff8d3a', '#ffc009' ,'#6fb634' ,'#5abba4', '#5ab5df', '#2875da'];
+        const keys = Object.keys(preparedData);
+        // Set the color scale
+        const color = d3.scaleOrdinal()
+            .domain(keys)
+            .range(baseColors.slice(0, keys.length))
+
+        // Calculate fields for the pie chart
+        const pie = d3.pie()
+            .sort(null) // Do not sort group by size
+            .value(entry => entry[1])
+            (Object.entries(preparedData));
+
+        //Create the arcs with arc function
+        const radius = 300; // TODO check value
+        const arc = d3.arc()
+            .innerRadius(150)         // This is the size of the hole
+            .outerRadius(radius)
+
+
+        // Create the pie chart
         svg
-            .append('g')
-            .attr("transform",`translate(${(graphConfig.margin.left + graphConfig.width - graphConfig.margin.right)/2},
-                ${graphConfig.margin.top + graphConfig.height - graphConfig.margin.bottom + graphConfig.labelX.offsetY})`)
+            .selectAll('donutPart')
+            .data(pie)
+            .enter()
+            .append('path')
+            .attr('d', arc )
+            .attr('fill', d => color(d.data[0]))
+            // transparent not working => use same color as background
+            .attr("stroke", "#797979")
+            .style("stroke-width", "4px")
+        
+
+        // Append text
+        svg
+            .selectAll('donutPart')
+            .data(pie)
+            .enter()
             .append('text')
-            .attr('class', 'label')
-            .text(categoryField);
+            .text(function(d){
+                const percent =  d.data[1] * 100 / total
+                    // avoid adding text if too small
+                    if (percent > 2){
+                        // round to 1 decimal
+                        return  Math.round(percent*10)/10 + '%'  
+                    }
+                })
+            .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")";  }) //put the text in the center of the donut chart parts
+            .style("text-anchor", "middle")
+            .style("font-size", 17)
+            .style('fill', 'floralwhite')
 
 
-
-        //create color scale
-        const colorScale = d3.scaleSequential(d3.interpolateInferno)
-            .domain([minY, maxY]);
-
-        //create bars 
-        const Bars = svg.append('g')
-            .selectAll('rect')
-            .data(filteredData)
-            .join('rect')
-            .attr('width', scaleX.bandwidth())
-            .attr('height', d => scaleY(scaleY.domain()[1]) - scaleY(d[1]))
-            .attr('x', d => graphConfig.margin.left + scaleX(d[0]))
-            .attr('y',  d => graphConfig.margin.top + scaleY(d[1]))
-            .style('fill', d => colorScale(d[1]));
-
-        //Add text TODO GUT ?
-
+        // append Legend
+        const table = d3.select(`#${containerId} .graphWithLegend`)
+            .append('div')
+            .attr('class', 'graphLegend')
+            .append('table');
+        let tr = table.append('tr')
+        tr.append('th').text('Couleur')
+        tr.append('th').text('Description')
+        keys.forEach((key, idx) => {
+            let tr = table.append('tr')
+            tr.append('td')
+                .attr('style', `background-color: ${baseColors[idx]}`)
+            let legend = key
+            if (legendMap !== undefined && legendMap[key] !== undefined) {
+                legend = legendMap[key]
+            }
+            tr.append('td').text(legend)
+        })
     }
 
     function init() {
