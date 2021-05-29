@@ -1,0 +1,228 @@
+body {
+    font-family:  'Source Sans Pro', sans-serif;
+}
+
+#header {
+    height: 400px;
+    justify-content: center;
+    align-items: flex-end;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+#header .header-image {
+    background-image: url("../images/white-and-brown-cow-near-mountain-during-daytime-205001.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+#header .header-title {
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    display: inline-block;
+    padding: 10px;
+    z-index: 50;
+    
+}
+
+#header .header-title h1 {
+    font-size: 65px;
+    color: #f2b600;
+    text-align: center;
+    
+}
+
+.wrapper {
+    margin: auto;
+    padding: 30px;
+    max-width: 900px;
+}
+
+
+
+#header2{
+    font-size: 28px;
+    color: #f2b600;
+    text-align: center;
+}
+.title{
+    color: #494d4c;
+    font-size: 33px;
+}
+.remark{
+    color: #8c9193;
+}
+.paragraph{
+    color:#494d4c ;
+    font-size: 17px;
+}
+
+.divider
+{
+	position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+	height: 1px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+.div-arrow-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -7px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 14px;
+	transform: rotate(45deg);
+	background-color: white;
+	border-bottom: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+}
+
+.languagesAgeGraph {
+    position: relative;
+}
+
+.languagesAgeGraph_legend {
+    position: absolute;
+    right: 50px;
+    top: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.languagesAgeGraph_color_lightblue{
+    background: #90a8c2;
+}
+.languagesAgeGraph_color_yellow{
+    background: #fa9c00;
+
+}
+.languagesAgeGraph_color_green{
+    background: green;
+}
+.languagesAgeGraph_color_blue{
+    background: #395b71;
+}
+.languagesAgeGraph_color_green{
+    background: #325b33;
+    
+}
+.languagesAgeGraph_color_sun{
+    background: #f3b703;
+    
+}
+
+svg {
+    display: block;
+    margin: auto;
+}
+
+
+.pieChart {
+    position: relative;
+}
+
+.label {
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    text-anchor: middle;
+}
+
+.languagesEveryDay_legend {
+    position: absolute;
+    right: 50px;
+    top: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.languagesEveryDay_color_lightblue{
+    background: #90a8c2;
+}
+.languagesEveryDay_color_yellow{
+    background: #fa9c00;
+
+}
+
+.languagesEveryDay_color_blue{
+    background: #395b71;
+}
+.languagesEveryDay_color_green{
+    background: #325b33;
+    
+}
+.languagesEveryDay_color_sun{
+    background: #ef6001;
+    
+}
+
+.foreignLanguagesTotal {
+    position: relative;
+}
+
+.languagesForeign_legend {
+    position: absolute;
+    right: 30px;
+    top: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.languagesForeign_legend_color_182f58{
+    background: #182f58;
+    
+}
+.languagesForeign_legend_color_543b74{
+    background: #543b74;
+}
+
+.languagesForeign_legend_color_92407e{
+    background: #92407e;
+}
+.languagesForeign_legend_color_cc4975{
+    background: #cc4975;    
+}
+.languagesForeign_legend_color_f4635e{
+    background: #f4635e;    
+}
+.languagesForeign_legend_color_ff8d3a{
+    background: #ff8d3a;    
+}
+
+.languagesForeign_legend_color_ffc009{
+    background: #ffc009;    
+}
+
+.languagesForeign_legend_color_6fb634{
+    background: #6fb634;    
+}
+
+.languagesForeign_legend_color_5abba4{
+    background: #5abba4;    
+}
+
+.languagesForeign_legend_color_006d48{
+    background: #006d48;    
+}
+
+svg {
+    overflow: visible;
+}

@@ -11,7 +11,10 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="graphConfig.js"></script>
 	<script src="graph_PfPI_age.js"></script>
+    <script src="camembert.js"></script>
     <script src="main.js"></script>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
@@ -20,7 +23,7 @@
         
         
         <div>
-            <label>Dimension de personnalité sélectionnée :
+            <label>Dimension de personnalité :
             <select class='select'>
                 <option value='Ouverture'>Ouverture</option>
                 <option value='Caractère Consciencieux'>Caractère Consciencieux</option>
@@ -34,11 +37,11 @@
 
 
     <div id="graph2">
-        <h2 class='title'>Dimensions principales de la personnalité selon le niveau actuel</h2>
+        <h2 class='title'>Dimensions principales de la personnalité selon le niveau</h2>
         
         
         <div>
-            <label>Dimension de personnalité sélectionnée : 
+            <label>Dimension de personnalité : 
             <select class='select'>
                 <option value='Ouverture'>Ouverture</option>
                 <option value='Caractère Consciencieux'>Caractère Consciencieux</option>
@@ -50,5 +53,89 @@
         </div>
     </div>
 
+
+    <div id="graph3">
+        <h2 class='title'>Nombre d'occurrences de tendances dysfonctionnelles selon le niveau</h2>
+        
+        
+        <div>
+            <label>Niveau : 
+            <select class='select'>
+                <option value='1' selected>1: Compétitions régionales</option>
+                <option value='2'>2: Compétitions nationales</option>
+                <option value='3'>3: Equipe suisse</option>
+                <option value='4'>4: Super Élite (Gratin mondial)</option>
+            </select>
+            </label>
+        </div>
+    </div>
+
+
+    <div id="graph4">
+        <h2 class='title'>Proportion des tendances dysfonctionnelles selon le niveau</h2>
+        
+        
+        <div>
+            <label>Niveau : 
+            <select class='select'>
+                <option value='1' selected>1: Compétitions régionales</option>
+                <option value='2'>2: Compétitions nationales</option>
+                <option value='3'>3: Equipe suisse</option>
+                <option value='4'>4: Super Élite (Gratin mondial)</option>
+            </select>
+            </label>
+        </div>
+    </div>
+
+    <div class='foreignLanguagesTotal'>
+        <table class="languagesForeign_legend">
+            <tr>
+                <th>Color</th>
+                <th>Languages</th>
+            </tr>
+            <tr>
+                <th class="languagesForeign_legend_color_182f58"></th>
+                <th>English</th>
+            </tr>
+            <tr>
+                <th class="languagesForeign_legend_color_543b74"></th>
+                <th>French</th>
+            </tr>
+            <tr>
+                <th class="languagesForeign_legend_color_92407e"></th>
+                <th>German</th>
+            </tr>
+            <tr>
+                <th class="languagesForeign_legend_color_cc4975"></th>
+                <th>Italian</th>
+            </tr>
+            <tr>
+                <th class="languagesForeign_legend_color_f4635e"></th>
+                <th>Spanish</th>
+            </tr>
+            <tr>
+                <th class="languagesForeign_legend_color_ff8d3a"></th>
+                <th>Swiss-German</th>
+            </tr>
+            <tr>
+                <th class="languagesForeign_legend_color_ffc009"></th>
+                <th>Portugese</th>
+            </tr>
+            <tr>
+                <th class="languagesForeign_legend_color_6fb634"></th>
+                <th>Russian</th>
+            </tr>
+            <tr>
+                <th class="languagesForeign_legend_color_5abba4"></th>
+                <th>Japanese</th>
+            </tr>
+            <tr>
+                <th class="languagesForeign_legend_color_006d48"></th>
+                <th>Arabic</th>
+            </tr>
+            
+        </table>
+
+    </div>
 </body>
 </html>
