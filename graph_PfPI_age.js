@@ -1,5 +1,5 @@
 
-function graphGeneric(containerId, categoryField, extractData, getDomain = undefined) {
+function graphGeneric(containerId, categoryField, extractData, descriptionByDimension, getDomain = undefined) {
     let currentDimension; // set language by default, the same as used un html
 
     function drawGraph(){
@@ -19,7 +19,7 @@ function graphGeneric(containerId, categoryField, extractData, getDomain = undef
             
         // Horizontal scale
         const scaleX = d3.scaleBand()
-            .domain((getDomain === void 0) ? Array.from(filteredData.keys()) : getDomain(filteredData))
+            .domain((getDomain === void 0) ? Array.from(filteredData.keys()) : getDomain())
             .range([0, graphConfig.width - graphConfig.margin.right - graphConfig.margin.left])
             .padding(0.2)
             .round(true) //arrondir les valeurs au pixel pres
@@ -28,8 +28,10 @@ function graphGeneric(containerId, categoryField, extractData, getDomain = undef
         // Vertical scale
         const maxY = d3.max(filteredData, d => d[1])
         const minY = d3.min(filteredData, d => d[1])
+        // @ts-ignore
         const extraOffset = graphConfig.axis.y.extraOffsetPercent * (maxY - minY) / 100
         const scaleY = d3.scaleLinear()
+            // @ts-ignore
             .domain([maxY + extraOffset, minY - extraOffset])
             .range([graphConfig.margin.top, graphConfig.height - graphConfig.margin.bottom -graphConfig.margin.top]);
         
@@ -71,6 +73,7 @@ function graphGeneric(containerId, categoryField, extractData, getDomain = undef
 
         //create color scale
         const colorScale = d3.scaleSequential(d3.interpolateInferno)
+            // @ts-ignore
             .domain([minY, maxY]);
 
         //create bars 
@@ -84,7 +87,15 @@ function graphGeneric(containerId, categoryField, extractData, getDomain = undef
             .attr('y',  d => graphConfig.margin.top + scaleY(d[1]))
             .style('fill', d => colorScale(d[1]));
 
-        //Add text TODO GUT ?
+        // Add description
+        const description = descriptionByDimension[currentDimension]
+        if (description != null) {
+            d3.select(`#${containerId} .description`).remove()
+            d3.select(`#${containerId}`)
+            .append('p')
+            .attr('class', 'description')
+            .html(description)
+        }
 
     }
 

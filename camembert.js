@@ -1,12 +1,12 @@
 
-function graphCamembertGeneric(containerId, extractData, legendMap = undefined) {
-    let currentDimension; // set language by default, the same as used un html
+function graphCamembertGeneric(containerId, extractData, descriptionByLevel, legendMap = undefined) {
+    let currentLevel;
 
     function drawGraph(){
         d3.select(`#${containerId} .graphWithLegend`).remove();
         
     
-        const preparedData = extractData(currentDimension);
+        const preparedData = extractData(currentLevel);
         // TODO filter 0 values ?
         // total is necessary to compute the percentages
         // @ts-ignore
@@ -99,15 +99,26 @@ function graphCamembertGeneric(containerId, extractData, legendMap = undefined) 
             }
             tr.append('td').text(legend)
         })
+
+
+        // Add description
+        const description = descriptionByLevel[currentLevel]
+        if (description != null) {
+            d3.select(`#${containerId} .description`).remove()
+            d3.select(`#${containerId}`)
+            .append('p')
+            .attr('class', 'description')
+            .html(description)
+        }
     }
 
     function init() {
-        currentDimension = d3.select(`#${containerId} .select option[selected]`).attr('value')
+        currentLevel = d3.select(`#${containerId} .select option[selected]`).attr('value')
 
         drawGraph();
 
         d3.select(`#${containerId} .select`).on('change', function(event) {
-            currentDimension = event.target.value;
+            currentLevel = event.target.value;
             drawGraph()
         });
     }
