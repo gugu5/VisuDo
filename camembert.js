@@ -42,10 +42,9 @@ function graphCamembertGeneric(containerId, extractData, descriptionByLevel, leg
             (Object.entries(preparedData));
 
         //Create the arcs with arc function
-        const radius = 300; // TODO check value
         const arc = d3.arc()
-            .innerRadius(150)         // This is the size of the hole
-            .outerRadius(radius)
+            .innerRadius(150) // size of the hole in the camembert
+            .outerRadius(300) // size of the camembert
 
 
         // Create the pie chart
@@ -54,7 +53,8 @@ function graphCamembertGeneric(containerId, extractData, descriptionByLevel, leg
             .data(pie)
             .enter()
             .append('path')
-            .attr('d', arc )
+            // @ts-ignore
+            .attr('d', arc)
             .attr('fill', d => color(d.data[0]))
             // transparent not working => use same color as background
             .attr("stroke", "#797979")
@@ -75,7 +75,8 @@ function graphCamembertGeneric(containerId, extractData, descriptionByLevel, leg
                         return  Math.round(percent*10)/10 + '%'  
                     }
                 })
-            .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")";  }) //put the text in the center of the donut chart parts
+            // @ts-ignore
+            .attr("transform", d => `translate(${arc.centroid(d)})`) //put the text in the center of the donut chart parts
             .style("text-anchor", "middle")
             .style("font-size", 17)
             .style('fill', 'floralwhite')
