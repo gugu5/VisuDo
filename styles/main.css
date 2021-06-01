@@ -1,7 +1,8 @@
 body {
     font-family:  'Source Sans Pro', sans-serif;
-    background-color: #797979;
+    background-color: #DCDCDC;
 }
+
 .graphcontainer {
     text-align: center;
     margin-bottom: 100px;
@@ -23,7 +24,23 @@ body {
     border-spacing: 5px;
 }
 
-/*
+.textcontainer {
+    text-align: center;
+    margin-bottom: 100px;
+
+}
+
+p {
+    margin-top: 50px;
+    margin-right: 300px;
+    margin-left: 300px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: large;
+}
+
+
 #header {
     height: 400px;
     justify-content: center;
@@ -34,7 +51,7 @@ body {
 }
 
 #header .header-image {
-    background-image: url("../images/white-and-brown-cow-near-mountain-during-daytime-205001.jpg");
+    background-image: url("../IMG_0717.JPG");
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -44,7 +61,7 @@ body {
 }
 
 #header .header-title {
-    /*background-color: rgba(255, 255, 255, 0.5);* /
+    background-color: rgba(255, 255, 255, 0.5);
     display: inline-block;
     padding: 10px;
     z-index: 50;
@@ -53,11 +70,11 @@ body {
 
 #header .header-title h1 {
     font-size: 65px;
-    color: #f2b600;
+    color: #ff0000a2;
     text-align: center;
     
 }
-*/
+
 
 .wrapper {
     margin: auto;
