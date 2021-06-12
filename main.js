@@ -163,10 +163,9 @@ d3.dsv(';', './FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
 })
 
 window.onresize = () => {
-  const h =  window.innerHeight
+    // on ne s'intéresse qu'aux changementx de largeur
   const w = window.innerWidth
-  if (h !== window.lastHeigth || w !== window.lastWidth) {
-    window.lastHeigth = h
+  if (w !== window.lastWidth) {
     window.lastWidth = w
     window.resizeListeners.forEach(f => f())
   }
