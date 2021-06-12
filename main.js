@@ -163,7 +163,13 @@ d3.dsv(';', './FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
 })
 
 window.onresize = () => {
-  window.resizeListeners.forEach(f => f())
+  const h =  window.innerHeight
+  const w = window.innerWidth
+  if (h !== window.lastHeigth || w !== window.lastWidth) {
+    window.lastHeigth = h
+    window.lastWidth = w
+    window.resizeListeners.forEach(f => f())
+  }
 };
 
 
