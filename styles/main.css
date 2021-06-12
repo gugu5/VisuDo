@@ -66,7 +66,7 @@ p {
 }
 
 #header .header-image {
-    background-image: url("../IMG_0717.JPG");
+    background-image: url("../DSC_1885.JPG");
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -76,18 +76,16 @@ p {
 }
 
 #header .header-title {
-    background-color: rgba(255, 255, 255, 0.5);
     display: inline-block;
-    padding: 10px;
     z-index: 50;
-    
 }
 
 #header .header-title h1 {
     font-size: 65px;
-    color: #ff0000a2;
+    color: #feef00;
     text-align: center;
-    
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 
