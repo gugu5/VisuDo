@@ -3,6 +3,9 @@
 
 
 
+// a list of functions to call on resize
+window.resizeListeners = []
+
 let globalData = null
 
 d3.dsv(';', './FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
@@ -159,10 +162,13 @@ d3.dsv(';', './FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
     
 })
 
+window.onresize = () => {
+  window.resizeListeners.forEach(f => f())
+};
 
 
 
 
 
 
-//Pense-bête:
+

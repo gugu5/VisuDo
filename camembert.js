@@ -25,18 +25,20 @@ function graphCamembertGeneric(containerId, extractData, descriptionByLevel, leg
             //.on('cancel', () => console.log('cancel'))
             .remove()
             .end().then(() => {
+                const width = Math.floor(graphConfig.getWidth()*.75);
+                const height = width;
             const svg = d3.select(`#${containerId}`)
                 .append('div')
                 .attr('class', 'graphWithLegend')
                 .attr('style', 'opacity: 0')
                 .append('svg')
-                .attr('width', graphConfig.width)
-                .attr('height', graphConfig.height)
+                .attr('width', width)
+                .attr('height', height)
                 .attr('class', 'graph')
                 .attr('style', 'font: 10px sans-serif')
                 // on veut centrer le graphe
                 .append('g')
-                .attr("transform", `translate(${graphConfig.width / 2},${graphConfig.height / 2})`)
+                .attr("transform", `translate(${width / 2},${height / 2})`)
                 ;
 
             const baseColors = ['#006d48',"#182f58","#543b74","#92407e", "#cc4975", "#f4635e", '#ff8d3a', '#ffc009' ,'#6fb634' ,'#5abba4', '#5ab5df', '#2875da'];
@@ -53,9 +55,10 @@ function graphCamembertGeneric(containerId, extractData, descriptionByLevel, leg
                 (Object.entries(preparedData));
 
             //Create the arcs with arc function
+            const outerRadius = width
             const arc = d3.arc()
-                .innerRadius(150) // size of the hole in the camembert
-                .outerRadius(300) // size of the camembert
+                .innerRadius(outerRadius/5) // size of the hole in the camembert
+                .outerRadius(outerRadius/2) // size of the camembert
 
 
             // Create the pie chart
@@ -89,7 +92,7 @@ function graphCamembertGeneric(containerId, extractData, descriptionByLevel, leg
                 // @ts-ignore
                 .attr("transform", d => `translate(${arc.centroid(d)})`) //put the text in the center of the donut chart parts
                 .style("text-anchor", "middle")
-                .style("font-size", 17)
+                .style("font-size", "15px")
                 .style('fill', 'floralwhite')
 
 
@@ -148,6 +151,8 @@ function graphCamembertGeneric(containerId, extractData, descriptionByLevel, leg
             currentLevel = event.target.value;
             drawGraph()
         });
+
+        window.resizeListeners.push(drawGraph)
     }
     init();
 }

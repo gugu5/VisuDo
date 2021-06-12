@@ -14,17 +14,20 @@ function graphGeneric(containerId, categoryField, extractData, descriptionByDime
         .remove()
         .end().then(() => {
         
+            const width = graphConfig.getWidth();
+            const height = graphConfig.getHeigth();
+
             const svg = d3.select(`#${containerId}`)
                 .append('svg')
-                .attr('width', graphConfig.width)
-                .attr('height', graphConfig.height)
+                .attr('width', width)
+                .attr('height', height)
                 .attr('class', 'graph')
                 .attr('style', 'font: 10px sans-serif; transform: scale(0)')
                 
             // Horizontal scale
             const scaleX = d3.scaleBand()
                 .domain((getDomain === void 0) ? Array.from(filteredData.keys()) : getDomain())
-                .range([0, graphConfig.width - graphConfig.margin.right - graphConfig.margin.left])
+                .range([0, width - graphConfig.margin.right - graphConfig.margin.left])
                 .padding(0.2)
                 .round(true) //arrondir les valeurs au pixel pres
 
@@ -37,7 +40,7 @@ function graphGeneric(containerId, categoryField, extractData, descriptionByDime
             const scaleY = d3.scaleLinear()
                 // @ts-ignore
                 .domain([maxY + extraOffset, minY - extraOffset])
-                .range([graphConfig.margin.top, graphConfig.height - graphConfig.margin.bottom -graphConfig.margin.top]);
+                .range([graphConfig.margin.top, height - graphConfig.margin.bottom -graphConfig.margin.top]);
             
             svg.append('g')
                 .attr('transform', `translate(${graphConfig.margin.left}, ${graphConfig.margin.top})`)
@@ -51,21 +54,21 @@ function graphGeneric(containerId, categoryField, extractData, descriptionByDime
             // legend Y
             svg
                 .append('g')
-                .attr("transform",`translate(${graphConfig.labelY.offsetX},${(graphConfig.margin.top + graphConfig.height - graphConfig.margin.bottom) / 2}) rotate(-90)`)
+                .attr("transform",`translate(${graphConfig.labelY.offsetX},${(graphConfig.margin.top + height - graphConfig.margin.bottom) / 2}) rotate(-90)`)
                 .append('text')
                 .attr('class', 'label')
                 .text(`Score "${currentDimension}"`);
                 
             svg.append('g')
-                .attr('transform', `translate(${graphConfig.margin.left}, ${graphConfig.height - graphConfig.margin.bottom})`)
+                .attr('transform', `translate(${graphConfig.margin.left}, ${height - graphConfig.margin.bottom})`)
                 .call(d3.axisBottom(scaleX));
 
             
             // legend X
             svg
                 .append('g')
-                .attr("transform",`translate(${(graphConfig.margin.left + graphConfig.width - graphConfig.margin.right)/2},
-                    ${graphConfig.margin.top + graphConfig.height - graphConfig.margin.bottom + graphConfig.labelX.offsetY})`)
+                .attr("transform",`translate(${(graphConfig.margin.left + width - graphConfig.margin.right)/2},
+                    ${graphConfig.margin.top + height - graphConfig.margin.bottom + graphConfig.labelX.offsetY})`)
                 .append('text')
                 .attr('class', 'label')
                 .text(categoryField);
@@ -118,6 +121,8 @@ function graphGeneric(containerId, categoryField, extractData, descriptionByDime
             currentDimension = event.target.value;
             drawGraph()
         });
+
+        window.resizeListeners.push(drawGraph)
     }
     init();
 }

@@ -1,7 +1,13 @@
 body {
-    font-family:  'Source Sans Pro', sans-serif;
+    font-family:  'Times new roman', serif;
     background-color: #b5b5b5;
+    font-size: 20px;
 }
+
+select {
+    font-size: 75%;
+}
+
 
 .graphcontainer {
     text-align: center;
@@ -11,13 +17,17 @@ body {
     margin-bottom: 15px;
 }
 .graphWithLegend {
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
+
+
 .graphLegend {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin-right: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 2em;
 }
 .graphLegend table {
     text-align: left;
@@ -34,12 +44,15 @@ body {
 
 p {
     margin-top: 50px;
-    margin-right: 300px;
-    margin-left: 300px;
+    margin-right: 15%;
+    margin-left: 15%;
     text-align: justify;
     text-justify: inter-word;
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: large;
+    column-width: 15em;
+    column-gap: 1.5em;
+    column-rule-style: solid;
+    column-rule-width: 1px;
+    column-rule-color: #6f6f6f;
 }
 
 
@@ -87,7 +100,7 @@ p {
 
 
 .title{
-    color: #494d4c;
+    color: #3c3c3c;
     font-size: 33px;
 }
 .remark{
@@ -131,136 +144,15 @@ p {
 	border-bottom: 1px solid rgb(48,49,51);
 	border-right: 1px solid rgb(48,49,51);
 }
-/*
-.languagesAgeGraph {
-    position: relative;
-}
 
-.languagesAgeGraph_legend {
-    position: absolute;
-    right: 50px;
-    top: 0;
-    list-style: none;
-    padding: 0;
-}
+h2 {
 
-.languagesAgeGraph_color_lightblue{
-    background: #90a8c2;
-}
-.languagesAgeGraph_color_yellow{
-    background: #fa9c00;
-
-}
-.languagesAgeGraph_color_green{
-    background: green;
-}
-.languagesAgeGraph_color_blue{
-    background: hsl(204, 33%, 33%);
-}
-.languagesAgeGraph_color_green{
-    background: #325b33;
-    
-}
-.languagesAgeGraph_color_sun{
-    background: #f3b703;
-    background: #2875da;
-}
-
-svg {
     display: block;
-    margin: auto;
-}
-
-
-.pieChart {
-    position: relative;
-}
-
-.label {
-    text-align: center;
+    font-size: 1.5em;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 10%;
+    margin-inline-end: 10%;
     font-weight: bold;
-    font-size: larger;
-    text-anchor: middle;
 }
 
-.languagesEveryDay_legend {
-    position: absolute;
-    right: 50px;
-    top: 0;
-    list-style: none;
-    padding: 0;
-}
-
-.languagesEveryDay_color_lightblue{
-    background: #90a8c2;
-}
-.languagesEveryDay_color_yellow{
-    background: #fa9c00;
-
-}
-
-.languagesEveryDay_color_blue{
-    background: #395b71;
-}
-.languagesEveryDay_color_green{
-    background: #325b33;
-    
-}
-.languagesEveryDay_color_sun{
-    background: #ef6001;
-    
-}
-
-.foreignLanguagesTotal {
-    position: relative;
-}
-
-.languagesForeign_legend {
-    position: absolute;
-    right: 30px;
-    top: 0;
-    list-style: none;
-    padding: 0;
-}
-
-.languagesForeign_legend_color_182f58{
-    background: #182f58;
-    
-}
-.languagesForeign_legend_color_543b74{
-    background: #543b74;
-}
-
-.languagesForeign_legend_color_92407e{
-    background: #92407e;
-}
-.languagesForeign_legend_color_cc4975{
-    background: #cc4975;    
-}
-.languagesForeign_legend_color_f4635e{
-    background: #f4635e;    
-}
-.languagesForeign_legend_color_ff8d3a{
-    background: #ff8d3a;    
-}
-
-.languagesForeign_legend_color_ffc009{
-    background: #ffc009;    
-}
-
-.languagesForeign_legend_color_6fb634{
-    background: #6fb634;    
-}
-
-.languagesForeign_legend_color_5abba4{
-    background: #5abba4;    
-}
-
-.languagesForeign_legend_color_006d48{
-    background: #006d48;    
-}
-
-svg {
-    overflow: visible;
-}
-*/
