@@ -8,7 +8,7 @@ window.resizeListeners = []
 
 let globalData = null
 
-d3.dsv(';', './data/FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
+d3.dsv(';', '../data/FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
     //afficher console
     //console.log(data);
     
@@ -156,7 +156,7 @@ d3.dsv(';', './data/FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
     }, {
         '1' : 'La TD "Introverti Distant" est absente et la TD "Pessimiste Dépressif" est plus fréquente que les autres. Cela s\'explique peut-être par le fait que les rameurs régionaux sont souvent adolescents, âge autour duquel la confiance en soi baisse. Sinon globalement, la répartition des TD est assez homogène.',
         '2' : "Les 12 TD sont présentes et réparties de façon assez homogène. La TD \"Anticonformiste impulsif\" est la TD la plus fréquente avec ses 15.4%. Cette TD est reliée aux dimensions de la stabilité émotionnelle, de l'agréabilité et du caractère consciencieux. Même en sachant cela, pas facile d'expliquer pouquoi cette TD est légrèment plus fréquente que les autres.",
-        '3' : "En équipe suisse, les 12 TD sont présentes. Contrairement aux régionaux, la TD \"Pessimiste Dépressif\" est sous-représentée (moins de 2%). Trois TD sortent du lot, \"Confiant en soi égocentrique\" (23%), \"Anticonformiste impulsif\" (18.9%) et \"Expressif théâtral\" (17.6%). Puisque une bonne confiance en soi est requise pour le haut niveau, il n'est pas surprenant de voir que presque un quart de l'équipe suisse est narcissique, on peut quasiment considérer cette TD comme nécessaire. La TD \"Expressif théâtral\" se justifie par une extraversion hors norme accompagnée d'une forte confiance en soi. L'anticonformisme impulsif se caractérse principalement par un niveau d'agréabilité faible. L'esprit de compétition étant négativement corrélé à la dimension de l'agréabilité, cela explique probablement la fréquence de cette TD.",
+        '3' : "En équipe suisse, les 12 TD sont présentes. Contrairement aux régionaux, la TD \"Pessimiste Dépressif\" est sous-représentée (moins de 2%). Trois TD sortent du lot, \"Confiant en soi égocentrique\" (23%), \"Anticonformiste impulsif\" (18.9%) et \"Expressif théâtral\" (17.6%). Puisque une bonne confiance en soi est requise pour le haut niveau, il n'est pas surprenant de voir que presque un quart de l'équipe suisse est narcissique, on peut quasiment considérer cette TD comme nécessaire. La TD \"Expressif théâtral\" se justifie par une extraversion hors norme accompagnée d'une forte confiance en soi. L'anticonformisme impulsif se caractérise principalement par un niveau d'agréabilité faible. L'esprit de compétition étant négativement corrélé à la dimension de l'agréabilité, cela explique probablement la fréquence de cette TD.",
         '4' : "Cinq TD n'apparaissent jamais dans le groupe super-élite. Les trois TD les plus fréquentes sont les mêmes que celles du groupe \"Equipe Suisse\". \"Confiance en soi égocentrisme\" est surreprésenté (35%), on peut dire que cette TD est quasiment une caractéristique inhérente au plus haut niveau de performance. Les TD \"Expressif théâtral\" et \"Anticonformiste impulsif\" apparaissent à des fréquences comparables à celles de groupe \"Equipe Suisse\".",
     });
     
