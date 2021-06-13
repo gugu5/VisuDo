@@ -1,8 +1,14 @@
 # Projet du Cours de Visualisation de Données
-Ce projet manipule des données sur la personnalité de rameurs suisses puis propose une visualisation qui a pour but de mettre en évidence des différences de personnalité entre les rameurs de différents âges et de différents niveaux de compétition.
+  Ce travail manipule des données sur la personnalité des rameurs suisses et propose une visualisation qui a pour but de mettre en évidence des différences de personnalité entre les rameurs de différents niveaux de compétition.
+
+## Contexte
+Ce projet a été fait dans le cadre du cours de l'Université de Lausanne "Visualisation de Données", encadré par le Professeur I.Pante. Les données proviennent de mon travail de Master.
 
 ## Accéder au site Personnalité et Compétition en Aviron
 La visualisation de données est disponible à ce lien: https://gugu5.github.io/VisuDo/
+
+## Exemple de visualisation
+Il y a deux barplots utilisant les cinq dimensions de la personnalité et deux camemberts basés sur les tendances dysfonctionnelles (TD). L'utilisateur sélectionne la dimension ou le groupe de niveau qui l'intéresse. Un bref commentaire est proposé sous chaque visualisation. ![Exemple de visualisation](imgCamembert.png)
 
 ## Descriptif des données
 
@@ -41,7 +47,7 @@ L’**Ouverture** rend compte de l’ouverture à l’expérience (cognitive ou 
 - Analyse de soi
 - Ouverture au changement
 
-L’**Agréabilité** concerne la nature des relations avec autrui. Cette dimen- sion se différencie de l’extraversion en ce sens que l’extraverti recherche la compagnie d’autrui tandis que l’altruiste s’intéresse au bien-être d’autrui. Elle est composée des quatre traits suivants :
+L’**Agréabilité** concerne la nature des relations avec autrui. Cette dimension se différencie de l’extraversion en ce sens que l’extraverti recherche la compagnie d’autrui tandis que l’altruiste s’intéresse au bien-être d’autrui. Elle est composée des quatre traits suivants :
 - Esprit de compétition
 - Attention à l’autre
 - Confiance en l’autre
@@ -61,6 +67,11 @@ Ce sont les scores bruts du TD12. Le TD12 informe quant à la personnalité dysf
 Il s'agit des notes T du TD12. Une note T est une note standardisée de moyenne 50 et d’écart type 10. Une personne ayant une note T de 50 se situe donc dans la moyenne ; une note T de 60 la situe à deux écarts type au-dessus de la moyenne ; une note T de 65 à trois écarts types au-dessus de la moyenne, etc. Dès deux écarts-tpyes, on considère que c'est une forte différence à la norme.
 
 ## Setup
+
+Cette visualisation de données a essenitellement été faite à partir de D3.
+
+https://d3js.org
+
 ### Configuration VSCode - IntelliSense
 Pour qu'IntelliSense fonctionne avec d3, il faut configurer le projet comme un projet Node.
 Installer [Node.js](https://nodejs.org/), puis exécuter dans le dossier racine du projet
@@ -83,3 +94,6 @@ Créer un fichier `jsconfig.json` et ajouter
 }
 ```
 Probablement que seule la section `typeAcquisition` est nécessaire.
+
+## Influences
+En plus des différentes aides et outils disponibles sur le web, ce projet s'est inspiré de ce site web: https://wiola99.github.io/VD-project/
