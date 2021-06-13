@@ -8,7 +8,7 @@ window.resizeListeners = []
 
 let globalData = null
 
-d3.dsv(';', './FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
+d3.dsv(';', './data/FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
     //afficher console
     //console.log(data);
     

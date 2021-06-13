@@ -10,7 +10,7 @@ La visualisation de données est disponible à ce lien: https://gugu5.github.io/
 ## Exemple de visualisation
 Il y a deux barplots utilisant les cinq dimensions de la personnalité et deux camemberts basés sur les tendances dysfonctionnelles (TD). L'utilisateur sélectionne la dimension ou le groupe de niveau qui l'intéresse. Un bref commentaire est proposé sous chaque visualisation.
 
-![Exemple de visualisation](imgCamembert.png)
+![Exemple de visualisation](/images/imgCamembert.png)
 
 
 
