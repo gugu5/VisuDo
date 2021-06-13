@@ -123,7 +123,7 @@ d3.dsv(';', './FichierCompletBaseANONYME.csv', d3.autoType).then(data => {
         '1' : "Chez les compétiteurs régionaux, plus de la moitié des rameurs n'a pas de TD. Par contre, 30% des rameurs ont 5 TD ou plus. Soit on n'a pas de tendance dysfonctionnelle, soit on les collectionne.",
         '2' : "Chez les compétiteurs nationaux, presque la moitié (~45%) des rameurs n'a pas de TD. Environ 23% des rameurs ont 5 TD ou plus et 32% ont 5 TD ou plus. La tendance se resserre vers le milieu (2-3 TD) par rapport aux rameurs régionaux.",
         '3' : "En équipe suisse, plus de 21% des rameurs n'ont aucune TD. 20% des rameurs accumulent 5 TD ou plus. Quasiment la moitié (48%) des rameurs nationaux accumule 2-3 TD. Par rapport aux rameurs nationaux et régionaux, la tendance se resserre encore vers le milieu.",
-        '4' : "Chez les super-élite, 27% n'ont aucune TD et moins de 10% accumulent 5 TD ou plus. Plus de la moitié des super-élite a 1,2 ou 3 TD. En étant super-élite, on a plus d'une chance sur deux d'avoir une ou plusieurs TD, mais on est quasiment sûr de ne pas en accumuler plus que trois. Il serait intéressant d'aller voir si ces 2-3 TD sont toujours les mêmes au seins du groupe. Le camembert suivant est là pour ça.",
+        '4' : "Chez les super-élite, 27% n'ont aucune TD et moins de 10% accumulent 5 TD ou plus. Plus de la moitié des super-élite a 1,2 ou 3 TD. En étant super-élite, on a plus d'une chance sur deux d'avoir une ou plusieurs TD, mais on est quasiment sûr de ne pas en accumuler plus que trois. Il serait intéressant d'aller voir si ces 2-3 TD sont toujours les mêmes au sein du groupe. Le camembert suivant est là pour ça.",
     }, {
         '0': '0 TD',
         '1': '1 TD',
