@@ -1,8 +1,8 @@
 # Projet du Cours de Visualisation de Données
 Ce travail manipule des données sur la personnalité des rameurs suisses et propose une visualisation qui a pour but de mettre en évidence des différences de personnalité entre les rameurs de différents niveaux de compétition.
 
-## Contexte
-Ce projet a été fait par A.Maillefer dans le cadre du cours de l'Université de Lausanne "Visualisation de Données", encadré par le Professeur I.Pante. Les données proviennent de son travail de Master.
+## Auteur et Contexte
+Ce projet a été fait par A.Maillefer (joignable [ici](mailto:augustin.maillefer@gmail.com)) dans le cadre du cours de l'Université de Lausanne "Visualisation de Données", encadré par le Professeur I.Pante. Les données proviennent de son travail de Master.
 
 ## Accéder au site Personnalité et Compétition en Aviron
 La visualisation de données est disponible à ce lien: https://gugu5.github.io/VisuDo/
